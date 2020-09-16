@@ -11,7 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class MainVIew {
+
+enum Level {
+	X,
+	O
+}
+
+public class MainView {
 
 	private JFrame frame;
 
@@ -22,7 +28,7 @@ public class MainVIew {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainVIew window = new MainVIew();
+					MainView window = new MainView();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +40,7 @@ public class MainVIew {
 	/**
 	 * Create the application.
 	 */
-	public MainVIew() {
+	public MainView() {
 		initialize();
 	}
 
