@@ -20,12 +20,12 @@ public class MainView {
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				
 				try {
 					MainView window = new MainView();
 					window.frame.setVisible(true);
@@ -40,15 +40,15 @@ public class MainView {
 	 * Create the application.
 	 */
 	public MainView() {
+		
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
 	private void initialize() {
+		
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\notab\\Pictures\\8ZWSv34j_400x400.png"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/img/favicon.png"));
 		frame.setTitle("totally not a virus.exe");
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +57,9 @@ public class MainView {
 		final JButton btn1 = new JButton("");
 		btn1.setFont(new Font("Arial", Font.BOLD, 24));
 		btn1.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
+				
 				if(btn1.getText().isEmpty()) {
 					btn1.setText("O");
 				}
@@ -113,5 +115,21 @@ public class MainView {
 		lblNewLabel_1.setBounds(298, 45, 205, 71);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
+	
+	//Comentario de cosos para ganar
+	//H 123 456 789 estas estan separadas cada 3 posiciones(las posiciones iniciales). 
+	//V 147 258 369 estas estan separadas cada 3 (las posiciones ganadoras) 
+	//D 159 357 estas estan separadas cada 4 la otra cada 2 xd (las posiciones ganadoras)
+	//las especiales **encontrar patron** 
+	//F 249 267 843 861 
+	
+	
+	//{ 
+	//  0 0 X    0 X 0  1 2 3 -> 
+	//  X 0 0    0 x 0  4 5 6 ->
+	//  0 X 0    0 x 0  7 8 9 ->
+	//}
+	
+	
 
 }
