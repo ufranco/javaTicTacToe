@@ -11,13 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-
-enum Level {
-	X,
-	O
-}
-
 public class MainView {
+	
+	enum Level {
+		X,
+		O
+	}
 
 	private JFrame frame;
 
