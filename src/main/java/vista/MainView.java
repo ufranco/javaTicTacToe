@@ -13,14 +13,14 @@ import javax.swing.SwingConstants;
 
 public class MainView {
 	
-	enum Level {
+	enum Player {
 		X,
 		O
 	}
 
 	private JFrame frame;
 
-	
+
 	public static void main(String[] args) {
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -36,15 +36,11 @@ public class MainView {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public MainView() {
 		
 		initialize();
 	}
 
-	
 	private void initialize() {
 		
 		frame = new JFrame();
