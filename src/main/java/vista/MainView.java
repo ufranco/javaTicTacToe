@@ -111,21 +111,5 @@ public class MainView {
 		lblNewLabel_1.setBounds(298, 45, 205, 71);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
-	
-	//Comentario de cosos para ganar
-	//H 123 456 789 estas estan separadas cada 3 posiciones(las posiciones iniciales). 
-	//V 147 258 369 estas estan separadas cada 3 (las posiciones ganadoras) 
-	//D 159 357 estas estan separadas cada 4 la otra cada 2 xd (las posiciones ganadoras)
-	//las especiales **encontrar patron** 
-	//F 249 267 843 861 
-	
-	
-	//{ 
-	//  0 0 X    0 X 0  1 2 3 -> 
-	//  X 0 0    0 x 0  4 5 6 ->
-	//  0 X 0    0 x 0  7 8 9 ->
-	//}
-	
-	
 
 }
