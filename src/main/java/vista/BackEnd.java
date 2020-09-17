@@ -90,6 +90,7 @@ public class BackEnd {
 		}
 		
 		if(!possibleWins.isEmpty()) {
+			System.out.println("ganaste capo");
 			return true;
 		}
 		
@@ -101,7 +102,6 @@ public class BackEnd {
 				.filter(winCondition -> !winCondition.contains(index))
 				.collect(Collectors.toList());
 	}
-	
 	
 	public void reset(){
 		this.plays = new Player[9];

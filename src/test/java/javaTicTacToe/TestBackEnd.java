@@ -1,8 +1,6 @@
 package javaTicTacToe;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import vista.BackEnd;
@@ -17,87 +15,85 @@ class TestBackEnd {
 		allWinSituations();
 	}
 	
-	
 	void allWinSituations()  {
 		//HORIZONTAL
-		
 		Player playerThisTurn = Player.X;
 		
-		assertFalse(back.processPlay(playerThisTurn, 0));
-		assertFalse(back.processPlay(playerThisTurn, 1));
-		assertTrue(back.processPlay(playerThisTurn, 2));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 0));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 1));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 2));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 3));
-		assertFalse(back.processPlay(playerThisTurn, 4));
-		assertTrue(back.processPlay(playerThisTurn, 5));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 3));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 4));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 5));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 6));
-		assertFalse(back.processPlay(playerThisTurn, 7));
-		assertTrue(back.processPlay(playerThisTurn, 8));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 6));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 7));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 8));
 		
 		back.reset();
 		
 		//VERTICAL
 		
-		assertFalse(back.processPlay(playerThisTurn, 0));
-		assertFalse(back.processPlay(playerThisTurn, 3));
-		assertTrue(back.processPlay(playerThisTurn, 6));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 0));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 3));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 6));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 1));
-		assertFalse(back.processPlay(playerThisTurn, 4));
-		assertTrue(back.processPlay(playerThisTurn, 7));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 1));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 4));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 7));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 2));
-		assertFalse(back.processPlay(playerThisTurn, 5));
-		assertTrue(back.processPlay(playerThisTurn, 8));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 2));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 5));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 8));
 		
 		back.reset();
 		
 		//DIAGONALES
 		
-		assertFalse(back.processPlay(playerThisTurn, 0));
-		assertFalse(back.processPlay(playerThisTurn, 4));
-		assertTrue(back.processPlay(playerThisTurn, 8));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 0));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 4));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 8));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 2));
-		assertFalse(back.processPlay(playerThisTurn, 4));
-		assertTrue(back.processPlay(playerThisTurn, 6));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 2));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 4));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 6));
 		
 		back.reset();
 		
 		//TOROIDALES
 		
-		assertFalse(back.processPlay(playerThisTurn, 1));
-		assertFalse(back.processPlay(playerThisTurn, 3));
-		assertTrue(back.processPlay(playerThisTurn, 8));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 1));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 3));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 8));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 7));
-		assertFalse(back.processPlay(playerThisTurn, 5));
-		assertTrue(back.processPlay(playerThisTurn, 0));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 7));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 5));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 0));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 7));
-		assertFalse(back.processPlay(playerThisTurn, 3));
-		assertTrue(back.processPlay(playerThisTurn, 2));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 7));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 3));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 2));
 		
 		back.reset();
 		
-		assertFalse(back.processPlay(playerThisTurn, 1));
-		assertFalse(back.processPlay(playerThisTurn, 5));
-		assertTrue(back.processPlay(playerThisTurn, 6));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 1));
+		Assertions.assertFalse(back.processPlay(playerThisTurn, 5));
+		Assertions.assertTrue(back.processPlay(playerThisTurn, 6));
 		
 	}
 
