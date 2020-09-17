@@ -2,7 +2,7 @@
   	<modelVersion>4.0.0</modelVersion>
   	<groupId>com.javaTicTacToe</groupId>
   	<artifactId>com.javaTicTacToe</artifactId>
-  	<version>0.0.5</version>
+  	<version>1.0.0</version>
   	<name>javaTicTacToe</name>
  	<properties>
 	    <maven.compiler.target>1.8</maven.compiler.target>
