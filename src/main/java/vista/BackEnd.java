@@ -11,13 +11,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import vista.MainView.Player;
+import vista.MainView.PlayerEnums;
 
 public class BackEnd {
 
 	private List<List<Integer>> winCases = new ArrayList<List<Integer>>();
 	
-	private Player[]  plays = new Player[9];
+	private PlayerEnums[]  plays = new PlayerEnums[9];
 	
 	public BackEnd(){
 			
@@ -39,19 +39,19 @@ public class BackEnd {
 	}
 	
 	
-	public boolean processPlay(Player playerMove, Integer button) {
+	public boolean processPlay(PlayerEnums playerMove, Integer button) {
 		plays[button] = playerMove;
 		return hayGanador(playerMove);
 	}
 	
 	
-	public boolean hayGanador(Player playerMove) {
+	public boolean hayGanador(PlayerEnums playerMove) {
 		
 		List<List<Integer>> possibleWins = getWinCases();
 		Integer index = 0;
 		
 		while(!possibleWins.isEmpty() &&  index < plays.length) {
-			Player play = plays[index]; 
+			PlayerEnums play = plays[index]; 
 			
 			++index;
 			
@@ -75,7 +75,7 @@ public class BackEnd {
 	}
 	
 	public void reset(){
-		this.plays = new Player[9];
+		this.plays = new PlayerEnums[9];
 	}
 
 	public List<List<Integer>> getWinCases() {

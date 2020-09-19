@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import vista.BackEnd;
-import vista.MainView.Player;
+import vista.MainView.PlayerEnums;
 
 class TestBackEnd {
 	
@@ -17,7 +17,7 @@ class TestBackEnd {
 	
 	void allWinSituations()  {
 		//HORIZONTAL
-		Player playerThisTurn = Player.X;
+		PlayerEnums playerThisTurn = PlayerEnums.X;
 		
 		Assertions.assertFalse(back.processPlay(playerThisTurn, 0));
 		Assertions.assertFalse(back.processPlay(playerThisTurn, 1));
