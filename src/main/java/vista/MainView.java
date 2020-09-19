@@ -13,15 +13,16 @@ import javax.swing.SwingConstants;
 
 public class MainView {
 	
-	public enum Player {
+	public enum PlayerEnums {
 		X,
 		O,
 	}
 	
-	
-	public Player playerThisTurn = Player.X;
+	public Player playerThisTurn;
 	private JLabel playingLabel;
 	private Boolean gameEnded;
+	private Player playerOne;
+	private Player playerTwo;
 	
 	private BackEnd backEnd = new BackEnd();
 	private JFrame frame;
@@ -65,8 +66,8 @@ public class MainView {
 					return;
 				}
 				
-				btn1.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 0);
+				btn1.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 0);
 				changeTurn(playerThisTurn);
 				btn1.setEnabled(false);
 			}
@@ -86,8 +87,8 @@ public class MainView {
 					return;
 				}
 				
-				btn2.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 1);
+				btn2.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 1);
 				changeTurn(playerThisTurn);
 				btn2.setEnabled(false);
 				
@@ -106,8 +107,8 @@ public class MainView {
 					return;
 				}
 				
-				btn3.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 2);
+				btn3.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 2);
 				changeTurn(playerThisTurn);
 				btn3.setEnabled(false);
 			}
@@ -126,8 +127,8 @@ public class MainView {
 					return;
 				}
 				
-				btn4.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 3);
+				btn4.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 3);
 				changeTurn(playerThisTurn);
 				btn4.setEnabled(false);
 			}
@@ -145,8 +146,8 @@ public class MainView {
 					return;
 				}
 				
-				btn5.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 4);
+				btn5.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 4);
 				changeTurn(playerThisTurn);
 				btn5.setEnabled(false);
 			}
@@ -164,8 +165,8 @@ public class MainView {
 					return;
 				}
 				
-				btn6.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 5);
+				btn6.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 5);
 				changeTurn(playerThisTurn);
 				btn6.setEnabled(false);
 			}
@@ -183,8 +184,8 @@ public class MainView {
 					return;
 				}
 				
-				btn7.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 6);
+				btn7.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 6);
 				changeTurn(playerThisTurn);
 				btn7.setEnabled(false);
 			}
@@ -202,8 +203,8 @@ public class MainView {
 					return;
 				}
 				
-				btn8.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 7);
+				btn8.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 7);
 				changeTurn(playerThisTurn);
 				btn8.setEnabled(false);
 			}
@@ -221,8 +222,8 @@ public class MainView {
 					return;
 				}
 				
-				btn9.setText(playerThisTurn.toString());
-				backEnd.processPlay(playerThisTurn, 8);
+				btn9.setText(playerThisTurn.getPlayerSignature().toString());
+				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 8);
 				changeTurn(playerThisTurn);
 				btn9.setEnabled(false);
 			}
@@ -238,8 +239,8 @@ public class MainView {
 	}
 	
 	public void changeTurn(Player lastMove) {
-		playerThisTurn = lastMove == Player.X ? Player.O : Player.X;
-		playingLabel.setText("Playing: "+ playerThisTurn);
+		playerThisTurn = lastMove.equals(this.playerOne)? this.playerTwo : this.playerOne;
+		playingLabel.setText("Playing: "+ playerThisTurn.getNickName());
 		
 	}
 
@@ -249,6 +250,22 @@ public class MainView {
 
 	public void setGameEnded(Boolean gameEnded) {
 		this.gameEnded = gameEnded;
+	}
+
+	public Player getPlayerOne() {
+		return playerOne;
+	}
+
+	public void setPlayerOne(Player playerOne) {
+		this.playerOne = playerOne;
+	}
+
+	public Player getPlayerTwo() {
+		return playerTwo;
+	}
+
+	public void setPlayerTwo(Player playerTwo) {
+		this.playerTwo = playerTwo;
 	}
 
 }
