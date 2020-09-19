@@ -18,15 +18,10 @@ public class MainView {
 		O,
 	}
 	
-	enum GameState{
-		IN_COURSE,
-		WIN,
-		DRAW
-	}
-	
 	
 	public Player playerThisTurn = Player.X;
 	private JLabel playingLabel;
+	private Boolean gameEnded;
 	
 	private BackEnd backEnd = new BackEnd();
 	private JFrame frame;
@@ -73,6 +68,7 @@ public class MainView {
 				btn1.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 0);
 				changeTurn(playerThisTurn);
+				btn1.setEnabled(false);
 			}
 		});
 		
@@ -93,6 +89,7 @@ public class MainView {
 				btn2.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 1);
 				changeTurn(playerThisTurn);
+				btn2.setEnabled(false);
 				
 			}
 		});
@@ -112,6 +109,7 @@ public class MainView {
 				btn3.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 2);
 				changeTurn(playerThisTurn);
+				btn3.setEnabled(false);
 			}
 		});
 		btn3.setBounds(439, 170, 64, 64);
@@ -131,6 +129,7 @@ public class MainView {
 				btn4.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 3);
 				changeTurn(playerThisTurn);
+				btn4.setEnabled(false);
 			}
 		});
 		btn4.setBounds(291, 245, 64, 64);
@@ -149,6 +148,7 @@ public class MainView {
 				btn5.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 4);
 				changeTurn(playerThisTurn);
+				btn5.setEnabled(false);
 			}
 		});
 		btn5.setBounds(365, 245, 64, 64);
@@ -167,6 +167,7 @@ public class MainView {
 				btn6.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 5);
 				changeTurn(playerThisTurn);
+				btn6.setEnabled(false);
 			}
 		});
 		btn6.setBounds(439, 245, 64, 64);
@@ -185,6 +186,7 @@ public class MainView {
 				btn7.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 6);
 				changeTurn(playerThisTurn);
+				btn7.setEnabled(false);
 			}
 		});
 		btn7.setBounds(291, 320, 64, 64);
@@ -239,6 +241,14 @@ public class MainView {
 		playerThisTurn = lastMove == Player.X ? Player.O : Player.X;
 		playingLabel.setText("Playing: "+ playerThisTurn);
 		
+	}
+
+	public Boolean getGameEnded() {
+		return gameEnded;
+	}
+
+	public void setGameEnded(Boolean gameEnded) {
+		this.gameEnded = gameEnded;
 	}
 
 }
