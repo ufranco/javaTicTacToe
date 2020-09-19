@@ -12,48 +12,22 @@ import java.util.stream.Collectors;
 
 import vista.MainView.Player;
 
-
-//Comentario de cosos para ganar
-
-	//H 123 456 789 estas estan separadas cada 3 posiciones(las posiciones iniciales). 
-
-	//V 147 258 369 estas estan separadas cada 3 (las posiciones ganadoras) 
-
-	//D 159 357 estas estan separadas cada 4 la otra cada 2 xd (las posiciones ganadoras)
-
-	//las especiales **encontrar patron** 
-
-	//F 249 267 843 861 
-	
-	//  0 0 X    0 X 0  1 2 3 -> 
-	//  X 0 0    0 x 0  4 5 6 ->
-	//  0 X 0    0 x 0  7 8 9 ->
-
-//
-
 public class BackEnd {
 
 	private List<List<Integer>> winSituations = new ArrayList<List<Integer>>();
 	private InputStream cosoWin;
-//	(1,2,3), ingeniarse forma de meter esto en el array de arriba sin hardcodearla duro
-//	(4,5,6),
-//	(7,8,9),
-//	(1,4,7),
-//	(2,5,8),
-//	(3,6,9),
-//	(1,5,9),
-//	(3,5,7),
-//	(2,4,9),
-//	(2,6,7),
-//	(8,4,3),
-//	(8,6,1),
+
 	
 	private Player[]  plays = new Player[9];
 	
 	public BackEnd(){
 		try {
 		String pepe = Files.lines(Paths.get("res/winCases.txt"), StandardCharsets.UTF_8).map(c->c.toString()).collect(Collectors.joining());
-		 System.out.println(pepe.split(";")[0].split(",")[2]);
+		 System.out.println(
+				 pepe.split(";")[0]
+				 .split(",")[2]);
+		 
+		 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
