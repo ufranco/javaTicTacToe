@@ -54,7 +54,7 @@ public class MainView {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/img/favicon.png"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("res/img/favicon.png"));
 		frame.setTitle("totally not a virus.exe");
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -203,6 +203,7 @@ public class MainView {
 				btn8.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 7);
 				changeTurn(playerThisTurn);
+				btn8.setEnabled(false);
 			}
 		});
 		btn8.setBounds(365, 320, 64, 64);
@@ -221,6 +222,7 @@ public class MainView {
 				btn9.setText(playerThisTurn.toString());
 				backEnd.processPlay(playerThisTurn, 8);
 				changeTurn(playerThisTurn);
+				btn9.setEnabled(false);
 			}
 		});
 		btn9.setBounds(439, 320, 64, 64);
@@ -236,6 +238,7 @@ public class MainView {
 	public void changeTurn(Player lastMove) {
 		playerThisTurn = lastMove == Player.X ? Player.O : Player.X;
 		playingLabel.setText("Playing: "+ playerThisTurn);
+		
 	}
 
 }
