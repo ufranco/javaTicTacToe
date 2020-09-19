@@ -46,7 +46,12 @@ public class MainView {
 
 	
 	private void initialize() {
+<<<<<<< Updated upstream
 		
+=======
+		System.out.println("asdasda");
+	
+>>>>>>> Stashed changes
 		frame = new JFrame();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/img/favicon.png"));
 		frame.setTitle("totally not a virus.exe");
@@ -104,10 +109,23 @@ public class MainView {
 		btn9.setBounds(291, 320, 64, 64);
 		frame.getContentPane().add(btn9);
 		
+<<<<<<< Updated upstream
 		JButton btn10 = new JButton("");
 		btn10.setFont(new Font("Arial", Font.BOLD, 24));
 		btn10.setBounds(365, 320, 64, 64);
 		frame.getContentPane().add(btn10);
+=======
+		playingLabel = new JLabel("Playing: " + playerThisTurn);
+		playingLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		playingLabel.setFont(new Font("Arial", Font.BOLD, 24));
+		playingLabel.setBounds(298, 45, 205, 71);
+		frame.getContentPane().add(playingLabel);
+	}
+
+	public void changeTurn(Player lastMove) {
+		playerThisTurn = lastMove == Player.X ? Player.O : Player.X;
+		playingLabel.setText("Playing: "+ playerThisTurn);
+>>>>>>> Stashed changes
 		
 		JLabel lblNewLabel_1 = new JLabel("Playing...");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -131,5 +149,10 @@ public class MainView {
 	//}
 	
 	
+
+	
+	public JFrame getFrame() {
+		return frame;
+	}
 
 }
