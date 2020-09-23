@@ -2,13 +2,12 @@ package vista;
 
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class MainView {
@@ -26,6 +25,8 @@ public class MainView {
 	
 	private BackEnd backEnd = new BackEnd();
 	private JFrame frame;
+	private JPanel panel;
+
 
 
 	public static void main(String[] args) {
@@ -50,11 +51,14 @@ public class MainView {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("res/img/favicon.png"));
-		frame.setTitle("totally not a virus.exe");
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		
+		panel = new JPanel();
+		panel.setBounds(0, 0, 784, 561);
+		frame.getContentPane().add(panel);
 		
 		final JButton btn1 = new JButton("");
 		btn1.setFont(new Font("Arial", Font.BOLD, 24));
@@ -72,9 +76,10 @@ public class MainView {
 				btn1.setEnabled(false);
 			}
 		});
+		panel.setLayout(null);
 		
-		btn1.setBounds(291, 170, 64, 64);
-		frame.getContentPane().add(btn1);
+		btn1.setBounds(302, 181, 60, 60);
+		panel.add(btn1);
 		
 		JButton btn2 = new JButton("");
 		btn2.setFont(new Font("Arial", Font.BOLD, 24));
@@ -94,8 +99,8 @@ public class MainView {
 				
 			}
 		});
-		btn2.setBounds(365, 170, 64, 64);
-		frame.getContentPane().add(btn2);
+		btn2.setBounds(372, 181, 60, 60);
+		panel.add(btn2);
 		
 		JButton btn3 = new JButton("");
 		btn3.setFont(new Font("Arial", Font.BOLD, 24));
@@ -113,8 +118,8 @@ public class MainView {
 				btn3.setEnabled(false);
 			}
 		});
-		btn3.setBounds(439, 170, 64, 64);
-		frame.getContentPane().add(btn3);
+		btn3.setBounds(442, 181, 60, 60);
+		panel.add(btn3);
 		
 		JButton btn4 = new JButton("");
 		btn4.setFont(new Font("Arial", Font.BOLD, 24));
@@ -133,8 +138,8 @@ public class MainView {
 				btn4.setEnabled(false);
 			}
 		});
-		btn4.setBounds(291, 245, 64, 64);
-		frame.getContentPane().add(btn4);
+		btn4.setBounds(302, 252, 60, 60);
+		panel.add(btn4);
 		
 		JButton btn5 = new JButton("");
 		btn5.setFont(new Font("Arial", Font.BOLD, 24));
@@ -152,8 +157,8 @@ public class MainView {
 				btn5.setEnabled(false);
 			}
 		});
-		btn5.setBounds(365, 245, 64, 64);
-		frame.getContentPane().add(btn5);
+		btn5.setBounds(372, 252, 60, 60);
+		panel.add(btn5);
 		
 		JButton btn6 = new JButton("");
 		btn6.setFont(new Font("Arial", Font.BOLD, 24));
@@ -171,8 +176,8 @@ public class MainView {
 				btn6.setEnabled(false);
 			}
 		});
-		btn6.setBounds(439, 245, 64, 64);
-		frame.getContentPane().add(btn6);
+		btn6.setBounds(442, 252, 60, 60);
+		panel.add(btn6);
 		
 		JButton btn7 = new JButton("");
 		btn7.setFont(new Font("Arial", Font.BOLD, 24));
@@ -190,8 +195,8 @@ public class MainView {
 				btn7.setEnabled(false);
 			}
 		});
-		btn7.setBounds(291, 320, 64, 64);
-		frame.getContentPane().add(btn7);
+		btn7.setBounds(302, 323, 60, 60);
+		panel.add(btn7);
 		
 		JButton btn8 = new JButton("");
 		btn8.setFont(new Font("Arial", Font.BOLD, 24));
@@ -209,8 +214,8 @@ public class MainView {
 				btn8.setEnabled(false);
 			}
 		});
-		btn8.setBounds(365, 320, 64, 64);
-		frame.getContentPane().add(btn8);
+		btn8.setBounds(372, 323, 60, 60);
+		panel.add(btn8);
 		
 		JButton btn9 = new JButton("");
 		btn9.setFont(new Font("Arial", Font.BOLD, 24));
@@ -228,14 +233,15 @@ public class MainView {
 				btn9.setEnabled(false);
 			}
 		});
-		btn9.setBounds(439, 320, 64, 64);
-		frame.getContentPane().add(btn9);
+		btn9.setBounds(442, 323, 60, 60);
+		panel.add(btn9);
 		
 		playingLabel = new JLabel("Playing: " + playerThisTurn);
 		playingLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		playingLabel.setFont(new Font("Arial", Font.BOLD, 24));
-		playingLabel.setBounds(298, 45, 205, 71);
-		frame.getContentPane().add(playingLabel);
+		playingLabel.setBounds(328, 82, 144, 29);
+		panel.add(playingLabel);
+
 	}
 	
 	public void changeTurn(Player lastMove) {
@@ -267,5 +273,15 @@ public class MainView {
 	public void setPlayerTwo(Player playerTwo) {
 		this.playerTwo = playerTwo;
 	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+
 
 }
