@@ -1,6 +1,5 @@
 package vista;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,13 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class MainView {
-	
-	public enum PlayerEnums {
-		X,
-		O,
-	}
 	
 	public Player playerThisTurn;
 	private JLabel playingLabel;
@@ -28,52 +23,26 @@ public class MainView {
 	private JPanel panel;
 
 
-
-	public static void main(String[] args) {
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				
-				try {
-					MainView window = new MainView();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public MainView(Player p1, Player p2) {
+		initialize(p1,p2);
 	}
 
-	public MainView() {
+	private void initialize(Player p1, Player p2) {	
 		
-		initialize();
-	}
-
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
+		playerOne = p1;
+		playerTwo = p2;
+		playerThisTurn= playerOne;
 		
 		panel = new JPanel();
+		panel.setBackground(Color.WHITE);
 		panel.setBounds(0, 0, 784, 561);
-		frame.getContentPane().add(panel);
 		
 		final JButton btn1 = new JButton("");
 		btn1.setFont(new Font("Arial", Font.BOLD, 24));
 		btn1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn1.getText().isEmpty()) {
-					return;
-				}
-				
-				btn1.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 0);
-				changeTurn(playerThisTurn);
-				btn1.setEnabled(false);
+				botonTablero(btn1 ,0);
 			}
 		});
 		panel.setLayout(null);
@@ -87,16 +56,7 @@ public class MainView {
 		btn2.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn2.getText().isEmpty()) {
-					return;
-				}
-				
-				btn2.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 1);
-				changeTurn(playerThisTurn);
-				btn2.setEnabled(false);
-				
+				botonTablero(btn2 ,1 );
 			}
 		});
 		btn2.setBounds(372, 181, 60, 60);
@@ -107,15 +67,7 @@ public class MainView {
 		btn3.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn3.getText().isEmpty()) {
-					return;
-				}
-				
-				btn3.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 2);
-				changeTurn(playerThisTurn);
-				btn3.setEnabled(false);
+				botonTablero(btn3 ,2);
 			}
 		});
 		btn3.setBounds(442, 181, 60, 60);
@@ -127,15 +79,7 @@ public class MainView {
 		btn4.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn4.getText().isEmpty()) {
-					return;
-				}
-				
-				btn4.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 3);
-				changeTurn(playerThisTurn);
-				btn4.setEnabled(false);
+				botonTablero(btn4,3);
 			}
 		});
 		btn4.setBounds(302, 252, 60, 60);
@@ -146,15 +90,7 @@ public class MainView {
 		btn5.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn5.getText().isEmpty()) {
-					return;
-				}
-				
-				btn5.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 4);
-				changeTurn(playerThisTurn);
-				btn5.setEnabled(false);
+				botonTablero(btn5,4);
 			}
 		});
 		btn5.setBounds(372, 252, 60, 60);
@@ -165,15 +101,7 @@ public class MainView {
 		btn6.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn6.getText().isEmpty()) {
-					return;
-				}
-				
-				btn6.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 5);
-				changeTurn(playerThisTurn);
-				btn6.setEnabled(false);
+				botonTablero(btn6, 5);
 			}
 		});
 		btn6.setBounds(442, 252, 60, 60);
@@ -184,15 +112,7 @@ public class MainView {
 		btn7.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn7.getText().isEmpty()) {
-					return;
-				}
-				
-				btn7.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 6);
-				changeTurn(playerThisTurn);
-				btn7.setEnabled(false);
+				botonTablero(btn7, 6);
 			}
 		});
 		btn7.setBounds(302, 323, 60, 60);
@@ -202,16 +122,8 @@ public class MainView {
 		btn8.setFont(new Font("Arial", Font.BOLD, 24));
 		btn8.addActionListener(new ActionListener() {
 			
-			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn8.getText().isEmpty()) {
-					return;
-				}
-				
-				btn8.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 7);
-				changeTurn(playerThisTurn);
-				btn8.setEnabled(false);
+			public void actionPerformed(ActionEvent e) {	
+				botonTablero(btn8, 7);
 			}
 		});
 		btn8.setBounds(372, 323, 60, 60);
@@ -222,24 +134,16 @@ public class MainView {
 		btn9.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				
-				if(!btn9.getText().isEmpty()) {
-					return;
-				}
-				
-				btn9.setText(playerThisTurn.getPlayerSignature().toString());
-				backEnd.processPlay(playerThisTurn.getPlayerSignature(), 8);
-				changeTurn(playerThisTurn);
-				btn9.setEnabled(false);
+				botonTablero(btn9, 8);
 			}
 		});
 		btn9.setBounds(442, 323, 60, 60);
 		panel.add(btn9);
 		
-		playingLabel = new JLabel("Playing: " + playerThisTurn);
+		playingLabel = new JLabel("Playing: " + playerThisTurn.getNickName());
 		playingLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		playingLabel.setFont(new Font("Arial", Font.BOLD, 24));
-		playingLabel.setBounds(328, 82, 144, 29);
+		playingLabel.setBounds(255, 73, 284, 29);
 		panel.add(playingLabel);
 
 	}
@@ -281,7 +185,13 @@ public class MainView {
 	public JPanel getPanel() {
 		return panel;
 	}
-
-
+	
+	private void botonTablero(JButton boton, int index) {
+		boton.setText(playerThisTurn.getPlayerSignature().toString());
+		backEnd.processPlay(playerThisTurn.getPlayerSignature(), index);
+		changeTurn(playerThisTurn);
+		boton.setEnabled(false);
+	}
+	
 
 }

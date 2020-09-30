@@ -4,12 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import vista.BackEnd;
-import vista.MainView.PlayerEnums;
+import vista.PlayerEnums;
 
 class TestBackEnd {
 	
+	
 	BackEnd back = new BackEnd();
-
+	
 	@Test
 	void test() {
 		allWinSituations();

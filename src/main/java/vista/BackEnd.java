@@ -9,8 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import vista.MainView.PlayerEnums;
-
 public class BackEnd {
 
 	private List<List<Integer>> winCases = new ArrayList<List<Integer>>();
