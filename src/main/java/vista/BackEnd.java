@@ -45,7 +45,7 @@ public class BackEnd {
 		
 		List<List<Integer>> possibleWins = getWinCases();
 		Integer index = 0;
-		
+		boolean hayGanador = false;
 		while(!possibleWins.isEmpty() &&  index < plays.length) {
 			PlayerEnums play = plays[index]; 
 			
@@ -57,11 +57,10 @@ public class BackEnd {
 		}
 		
 		if(!possibleWins.isEmpty()) {
-			System.out.println("ganaste capo " + playerMove);
-			return true;
+			hayGanador = true;
 		}
 		
-		return false;
+		return hayGanador;
 	}
 	
 	public List<List<Integer>> filterWinConditions(List<List<Integer>> possibleWins, Integer index){

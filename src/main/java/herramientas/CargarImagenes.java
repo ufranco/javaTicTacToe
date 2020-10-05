@@ -7,18 +7,20 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+
 
 public class CargarImagenes {
 
 	
 	public static BufferedImage cargarBuffIm(String path) {
 		BufferedImage hoja = null;
-		try {
-			hoja = ImageIO.read(new File(path));
-		}catch (IOException ex) {
-			JOptionPane.showInputDialog("Seleccione un archivo con formato:\n.png, .jpeg, .jpg, .gif u otro formato de imagen");
-		}
+		
+			try {
+				hoja = ImageIO.read(new File(path));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	
 		return hoja;	
 	}
 	

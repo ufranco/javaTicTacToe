@@ -17,9 +17,7 @@ public class FirstView {
 	private JFrame frame;
 	private PlaySetup ps;
 	JPanel Canvas;
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,60 +31,18 @@ public class FirstView {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public FirstView() {
 		initialize();
 	}
 	
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("res/img/favicon.png"));
-		frame.setTitle("totally not a virus.exe");
-		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-	    Canvas = new JPanel();
-		Canvas.setBounds(0, 0, 784, 561);
-		frame.getContentPane().add(Canvas);
-		Canvas.setLayout(null);
-		
-		
-		JPanel leftMenu = new JPanel();
-		leftMenu.setBackground(new Color(0, 102, 255));
-		leftMenu.setBounds(0, 0, 191, 561);
-		leftMenu.setLayout(null);
-		Canvas.add(leftMenu);
-		
-		JLabel Inicio = new JLabel("Inicio");
-		Inicio.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				botonInicio();
-			}
-		});
-		Inicio.setBounds(63, 360, 92, 14);
-		leftMenu.add(Inicio); // HAY QUE DESHABILITAR LOS BOTONES DEL TABLERO UNA VEZ QUE GANO
-		
-		JLabel Instrucciones = new JLabel("Instrucciones");
-		Instrucciones.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				botonInstrucciones();
-			}
-		});
-		Instrucciones.setBounds(63, 430, 92, 14);
-		leftMenu.add(Instrucciones);
-		
-		JLabel Historial = new JLabel("Historial");
-		Historial.setBounds(63, 500, 92, 14);
-		leftMenu.add(Historial);
-		
+		initFrame();
+		initCanvas();
+		initMenu();
+		initTitleDisplay();
+	}
+	
+	private void initTitleDisplay() {
 		JPanel DisplayIni = new JPanel();
 		DisplayIni.setBackground(new Color(0, 0, 102));
 		DisplayIni.setBounds(190, 0, 594, 561);
@@ -96,12 +52,59 @@ public class FirstView {
 		JLabel title = new JLabel();
 		title.setIcon(new ImageIcon("res/img/Tateti.gif"));
 		title.setForeground(new Color(153, 0, 51));
-		title.setFont(new Font("Franklin Gothic Medium", title.getFont().getStyle() | Font.BOLD | Font.ITALIC, title.getFont().getSize() + 5));
 		title.setBounds(59, 35, 480, 480);
 		DisplayIni.add(title);
-		
 	}
-	
+
+	private void initMenu() {
+		JPanel leftMenu = new JPanel();
+		leftMenu.setBackground(new Color(0, 102, 255));
+		leftMenu.setBounds(0, 0, 191, 561);
+		leftMenu.setLayout(null);
+		Canvas.add(leftMenu);
+		
+		JLabel Inicio = new JLabel("");
+		Inicio.setIcon(herramientas.CargarImagenes.cargarIcon("res/img/play.png", 64,64));
+		Inicio.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				botonInicio();
+				
+			}});
+		
+		Inicio.setBounds(50, 189, 64, 64);
+		leftMenu.add(Inicio); 
+		
+		JLabel Instrucciones = new JLabel("");
+		Instrucciones.setIcon(herramientas.CargarImagenes.cargarIcon("res/img/info.png", 64,64));
+		Instrucciones.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				botonInstrucciones();
+			}
+		});
+		Instrucciones.setBounds(50, 328, 64, 64);
+		leftMenu.add(Instrucciones);
+	}
+
+	private void initCanvas() {
+	    Canvas = new JPanel();
+		Canvas.setBounds(0, 0, 784, 561);
+		frame.getContentPane().add(Canvas);
+		Canvas.setLayout(null);
+	}
+
+	private void initFrame() {
+		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("res/img/favicon.png"));
+		frame.setTitle("totally not a virus.exe");
+		frame.setBounds(100, 100, 800, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+			
+	}
+
 	private void setPanel(JPanel panel) {
 		this.frame.getContentPane().add(panel);
 	}
