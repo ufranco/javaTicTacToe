@@ -2,7 +2,6 @@ package vista;
 
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -12,17 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FirstView {
+public class PantallaInicial {
 
 	private JFrame frame;
-	private PlaySetup ps;
+	private VistaPreparacion vP;
 	JPanel Canvas;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FirstView window = new FirstView();
+					PantallaInicial window = new PantallaInicial();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +30,7 @@ public class FirstView {
 		});
 	}
 
-	public FirstView() {
+	public PantallaInicial() {
 		initialize();
 	}
 	
@@ -44,7 +43,7 @@ public class FirstView {
 	
 	private void initTitleDisplay() {
 		JPanel DisplayIni = new JPanel();
-		DisplayIni.setBackground(new Color(0, 0, 102));
+		DisplayIni.setBackground(new Color(0, 0, 128));
 		DisplayIni.setBounds(190, 0, 594, 561);
 		DisplayIni.setLayout(null);
 		Canvas.add(DisplayIni);
@@ -108,13 +107,14 @@ public class FirstView {
 	private void setPanel(JPanel panel) {
 		this.frame.getContentPane().add(panel);
 	}
+	
 	void botonInicio() {
-		ps = new PlaySetup();
-		this.setPanel(ps.getPanel());    
+		vP = new VistaPreparacion();
+		this.setPanel(vP.getPanel());    
 		this.Canvas.setVisible(false);
 	}
 	private void botonInstrucciones() {
-		Instrucciones inst = new Instrucciones();
+		VistaInstrucciones inst = new VistaInstrucciones();
 		this.setPanel(inst.getPanel());
 		this.Canvas.setVisible(false);
 	}

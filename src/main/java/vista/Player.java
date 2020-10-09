@@ -1,26 +1,27 @@
 package vista;
 
-import java.awt.Image;
-
-import vista.MainView.PlayerEnums;
+import javax.swing.ImageIcon;
 
 public class Player {
 
 	private String nickName;
-	private Image avatar;
+	private ImageIcon avatar;
 	private PlayerEnums playerSignature;
 	
-	Player(String nickName, Image avatar, PlayerEnums playerSignature){
+	Player(){
+	}
+	
+	Player(String nickName, ImageIcon avatar, PlayerEnums playerSignature){
 		this.setNickName(nickName);
 		this.setAvatar(avatar);
 		this.setPlayerSignature(playerSignature);
 	}
 
-	public Image getAvatar() {
+	public ImageIcon getAvatar() {
 		return avatar;
 	}
 
-	public void setAvatar(Image avatar) {
+	public void setAvatar(ImageIcon avatar) {
 		this.avatar = avatar;
 	}
 

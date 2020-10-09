@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class MainView {
+public class VistaJuego {
 	
 	public Player playerThisTurn;
 	private Boolean gameEnded = false;
@@ -19,12 +19,13 @@ public class MainView {
 	private Player playerTwo;
 	
 	private BackEnd backEnd = new BackEnd();
+
 	private JPanel panel;
 	private JPanel tablero;
 	private JLabel playingLabel;
 	private ArrayList<JButton> botones = new ArrayList<JButton>(9);
 
-	public MainView(Player p1, Player p2) {
+	public VistaJuego(Player p1, Player p2) {
 		initialize(p1,p2);
 	}
 
@@ -142,8 +143,15 @@ public class MainView {
 	}
 	
 	private void GameOver() {
-		botones.forEach((b) -> b.setEnabled(false));
-		playingLabel.setText("Ganador: " + playerThisTurn.getNickName());
+		Player perdedor = getPerdedor();
+		VistaGameOver vgo = new VistaGameOver(playerThisTurn, perdedor);
+		this.panel.getParent().add(vgo.getPanel());
+		this.panel.setVisible(false);
+		this.panel.getParent().remove(this.panel);
+	}
+
+	private Player getPerdedor() {
+		return playerThisTurn != playerOne? playerOne : playerTwo;
 	}
 
 	public JPanel getPanel() {
