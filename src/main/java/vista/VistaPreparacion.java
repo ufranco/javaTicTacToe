@@ -60,7 +60,7 @@ public class VistaPreparacion {
 		
 		iconoP2 = new JLabel("");
 		iconoP2.setIcon(player2.getAvatar());
-		iconoP2.setBounds(646, 118, 128, 128);
+		iconoP2.setBounds(626, 118, 128, 128);
 		panel.add(iconoP2);
 
 		JButton searchIconO = new JButton("Cambiar avatar");
@@ -68,8 +68,13 @@ public class VistaPreparacion {
 			public void actionPerformed(ActionEvent arg0) {
 				iconoP2.setIcon(buscarIconoPlayer(player2, pathIconO));
 				}});
-		searchIconO.setBounds(646, 254, 128, 20);
+		searchIconO.setBounds(626, 253, 128, 20);
 		panel.add(searchIconO);
+		
+		JLabel Fondo = new JLabel("");
+		Fondo.setIcon(herramientas.CargarImagenes.cargarIcon("res/img/fondo.jpg", 800, 600));
+		Fondo.setBounds(0, 0, 800, 600);
+		panel.add(Fondo);
 	}
 
 	private void initPanel() {
@@ -78,7 +83,10 @@ public class VistaPreparacion {
 		panel.setBounds(0, 0, 784, 561);
 		panel.setLayout(null);
 		
+		
+		
 		JLabel TitleLabel = new JLabel("X / O");
+		TitleLabel.setForeground(Color.WHITE);
 		TitleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		TitleLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		TitleLabel.setBounds(340, 11, 109, 67);
@@ -91,7 +99,10 @@ public class VistaPreparacion {
 			}});
 		playButton.setBounds(347, 527, 89, 23);
 		panel.add(playButton);
+		
 	}
+	
+	
 
 	private void initNameSector() {
 		
@@ -104,12 +115,13 @@ public class VistaPreparacion {
 		panel.add(nameTextFieldX);
 		
 		JLabel nameLabelX = new JLabel("Ingrese su nombre:");
-		nameLabelX.setBounds(48, 310, 128, 14);
+		nameLabelX.setForeground(Color.WHITE);
+		nameLabelX.setBounds(10, 310, 128, 14);
 		panel.add(nameLabelX);
 		
 		nameTextFieldO = new JTextField();
 		nameTextFieldO.setColumns(10);
-		nameTextFieldO.setBounds(627, 335, 147, 20);
+		nameTextFieldO.setBounds(607, 335, 147, 20);
 		nameTextFieldO.addActionListener(new ActionListener(){
 		
             public void actionPerformed(ActionEvent e){
@@ -120,16 +132,17 @@ public class VistaPreparacion {
 		panel.add(nameTextFieldO);
 		
 		JLabel nameLabelO = new JLabel("Ingrese su nombre:");
-		nameLabelO.setBounds(627, 310, 128, 14);
+		nameLabelO.setForeground(Color.WHITE);
+		nameLabelO.setBounds(607, 310, 128, 14);
 		panel.add(nameLabelO);
 		
 		infoLabel1 = new JLabel("(Presione ENTER para confirmar)");
-		infoLabel1.setForeground(Color.GRAY);
+		infoLabel1.setForeground(Color.LIGHT_GRAY);
 		infoLabel1.setBounds(10, 366, 212, 14);
 		panel.add(infoLabel1);
 		
 		infoLabel2 = new JLabel("(Presione ENTER para confirmar)");
-		infoLabel2.setForeground(Color.GRAY);
+		infoLabel2.setForeground(Color.LIGHT_GRAY);
 		infoLabel2.setBounds(585, 366, 199, 14);
 		panel.add(infoLabel2);
 	}
@@ -176,5 +189,4 @@ public class VistaPreparacion {
 	public JPanel getPanel() {
 		return panel;
 	}
-
 }

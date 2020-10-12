@@ -43,7 +43,7 @@ public class PantallaInicial {
 	
 	private void initTitleDisplay() {
 		JPanel DisplayIni = new JPanel();
-		DisplayIni.setBackground(new Color(0, 0, 128));
+		DisplayIni.setBackground(new Color(108,29,108));
 		DisplayIni.setBounds(190, 0, 594, 561);
 		DisplayIni.setLayout(null);
 		Canvas.add(DisplayIni);
@@ -57,7 +57,7 @@ public class PantallaInicial {
 
 	private void initMenu() {
 		JPanel leftMenu = new JPanel();
-		leftMenu.setBackground(new Color(0, 102, 255));
+		leftMenu.setBackground(new Color(245, 86, 215));
 		leftMenu.setBounds(0, 0, 191, 561);
 		leftMenu.setLayout(null);
 		Canvas.add(leftMenu);

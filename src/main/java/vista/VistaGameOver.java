@@ -23,7 +23,7 @@ public class VistaGameOver {
 	private void initialize(Player winner, Player losser) {
 	
 		panel = new JPanel();
-		panel.setBackground(new Color(0, 0, 128));
+		panel.setBackground(new Color(0, 0, 0));
 		panel.setBounds(0, 0, 784, 561);
 		panel.setLayout(null);
 		
@@ -48,7 +48,7 @@ public class VistaGameOver {
 	
 	private void setButtons() {
 		JButton menuPpalBtn = new JButton("Menu Principal");
-		menuPpalBtn.setBackground(new Color(0, 102, 255));
+		menuPpalBtn.setBackground(new Color(245, 86, 215));
 		menuPpalBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				volverAMenu();
@@ -57,25 +57,30 @@ public class VistaGameOver {
 		panel.add(menuPpalBtn);
 		
 		JButton volverAJugarBtn = new JButton("Volver a jugar");
-		volverAJugarBtn.setBackground(new Color(0, 102, 255));
+		volverAJugarBtn.setBackground(new Color(245, 86, 215));
 		volverAJugarBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				volverAJugar();
 			}});
 		volverAJugarBtn.setBounds(460, 463, 204, 43);
 		panel.add(volverAJugarBtn);
+		
+		JLabel Fondo = new JLabel("");
+		Fondo.setIcon(herramientas.CargarImagenes.cargarIcon("res/img/fondo.jpg", 800, 600));
+		Fondo.setBounds(0, 0, 800, 600);
+		panel.add(Fondo);
 	}
 	
 	private void setNicks() {
 
 		JLabel nickGanador = new JLabel(ganador.getNickName());
-		nickGanador.setForeground(new Color(210, 105, 30));
+		nickGanador.setForeground(new Color(255, 255, 255));
 		nickGanador.setHorizontalAlignment(SwingConstants.CENTER);
 		nickGanador.setBounds(89, 228, 118, 25);
 		panel.add(nickGanador);
 		
 		JLabel nickPerdedor = new JLabel(perdedor.getNickName());
-		nickPerdedor.setForeground(new Color(210, 105, 30));
+		nickPerdedor.setForeground(new Color(255, 255, 255));
 		nickPerdedor.setHorizontalAlignment(SwingConstants.CENTER);
 		nickPerdedor.setBounds(570, 233, 118, 25);
 		panel.add(nickPerdedor);
@@ -86,7 +91,7 @@ public class VistaGameOver {
 	private void setLabels() {
 		JLabel ganadorLabel = new JLabel("Ganador:");
 		ganadorLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		ganadorLabel.setForeground(new Color(210, 105, 30));
+		ganadorLabel.setForeground(new Color(255, 255, 255));
 		ganadorLabel.setFont(new Font("Segoe UI Emoji", Font.BOLD, 28));
 		ganadorLabel.setBounds(10, 22, 275, 43);
 		panel.add(ganadorLabel);
@@ -94,7 +99,7 @@ public class VistaGameOver {
 		JLabel perdedorLabel = new JLabel("Perdedor:");
 		perdedorLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		perdedorLabel.setFont(new Font("Segoe UI Emoji", Font.BOLD, 28));
-		perdedorLabel.setForeground(new Color(210, 105, 30));
+		perdedorLabel.setForeground(new Color(255, 255, 255));
 		perdedorLabel.setBounds(499, 22, 275, 43);
 		panel.add(perdedorLabel);
 	}

@@ -62,12 +62,12 @@ public class VistaJuego {
 		
 		JLabel p2name = new JLabel(playerTwo.getNickName());
 		p2name.setBounds(656, 160, 118, 14);
-		panel.add(p2name);
+		panel.add(p2name);;
 	}
 
 	private void initTablero() {
 		tablero = new JPanel();
-		tablero.setBackground(Color.WHITE);
+		tablero.setBackground(new Color(185,103,255));
 		tablero.setBounds(255, 160, 300, 300);
 		tablero.setLayout(null);
 		fillTablero();
@@ -114,7 +114,7 @@ public class VistaJuego {
 
 	private void initPanel() {
 		panel = new JPanel();
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(new Color(185,103,255));
 		panel.setBounds(0, 0, 784, 561);
 		panel.setLayout(null);
 		
